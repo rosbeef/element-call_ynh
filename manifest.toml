@@ -52,6 +52,7 @@ ram.runtime = "50M"
     type = "string"
     example = "livekit"
     default = "livekit"
+    in_subdir = true
 
 [resources]
 
