@@ -46,6 +46,13 @@ ram.runtime = "50M"
     example = "my-own-homeserver.tld"
     default = "matrix.org"
 
+    [install.livekit_host_name]
+    ask.en = "Choose hostname for the livekit server"
+    ask.fr = "Choisissez nom de machine pour le server livekit"
+    type = "string"
+    example = "livekit"
+    default = "livekit"
+
 [resources]
 
     [resources.sources]
