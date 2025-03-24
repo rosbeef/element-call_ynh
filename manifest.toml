@@ -64,6 +64,7 @@ ram.runtime = "50M"
 
     [resources.sources.livekit]
     url = "https://github.com/livekit/livekit/archive/refs/tags/v1.8.4.tar.gz"
+    sha256 = "81e8b7c6ed90fe98f91bb0b1dd48bf254f564f3cc925ce5d25e335e2e03fd648"
     
     autoupdate.strategy = "latest_github_tag"
     
