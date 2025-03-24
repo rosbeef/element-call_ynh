@@ -20,7 +20,6 @@ ynh_setup_source --dest_dir="$install_dir"
 #=================================================
 ynh_script_progression "Installing dependencies..."
 
-ynh_nodejs_install
 ynh_go_install
 
 #=================================================
@@ -28,7 +27,7 @@ ynh_go_install
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
-ynh_config_add --template="config.json" --destination="$install_dir/public/config.json"
+#ynh_config_add --template="config.json" --destination="$install_dir/public/config.json"
 
 #=================================================
 # SYSTEM CONFIGURATION
@@ -36,17 +35,6 @@ ynh_config_add --template="config.json" --destination="$install_dir/public/confi
 ynh_script_progression "Adding system configurations related to $app..."
 
 ynh_config_add_nginx
-ynh_config_add --template="nginx-livekit.conf" --destination="/etc/nginx/conf.d/$livekit_host_name.$domain.d/livekit_server_name.conf" 
-
-#=================================================
-# INSTALL THE ELEMENT CALL
-#=================================================
-ynh_script_progression "Installing $app..."
-
-pushd $install_dir
-	ynh_hide_warnings ynh_exec_as_app yarn install
-	ynh_hide_warnings ynh_exec_as_app NODE_ENV=production yarn build
-popd
 
 #=================================================
 # INSTALL THE LIVEKIT
