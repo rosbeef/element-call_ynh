@@ -2,20 +2,20 @@
 
 packaging_format = 2
 
-id = "element-call"
-name = "Element-Call"
-description.en = "Group calls powered by Matrix"
-description.fr = "Appels de groupe alimentés par Matrix"
+id = "livekit"
+name = "LiveKit"
+description.en = "Real-time video, audio and data for developers"
+description.fr = "Real-time video, audio and data for developers"
 
-version = "0.8.0~ynh1"
+version = "1.8.4~ynh0"
 
 maintainers = []
 
 [upstream]
 license = "Apache-2.0"
-website = "https://call.element.io/"
-demo = "https://call.element.io/"
-code = "https://github.com/vector-im/element-call"
+website = "https://livekit.io/"
+demo = "https://cloud.livekit.io/"
+code = "https://github.com/livekit/livekit"
 
 [integration]
 yunohost = ">= 12.0.9"
@@ -46,23 +46,11 @@ ram.runtime = "50M"
     example = "my-own-homeserver.tld"
     default = "matrix.org"
 
-    [install.livekit_host_name]
-    ask.en = "Choose hostname for the livekit server"
-    ask.fr = "Choisissez nom de machine pour le server livekit"
-    type = "string"
-    example = "livekit"
-    default = "livekit"
-
 [resources]
 
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/vector-im/element-call/archive/refs/tags/v0.8.0.tar.gz"
-    sha256 = "c55ae35113c2da19128eed9b85ff81e0edd58f07b215863107d16593a2ac3900"
-    autoupdate.strategy = "latest_github_tag"
-
-    [resources.sources.livekit]
     url = "https://github.com/livekit/livekit/archive/refs/tags/v1.8.4.tar.gz"
     sha256 = "81e8b7c6ed90fe98f91bb0b1dd48bf254f564f3cc925ce5d25e335e2e03fd648"
     
@@ -78,6 +66,3 @@ ram.runtime = "50M"
 
     [resources.apt]
     packages = ""
-    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
-    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    extras.yarn.packages = "yarn"
