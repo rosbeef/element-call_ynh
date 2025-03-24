@@ -41,10 +41,10 @@ ynh_config_add_nginx
 #=================================================
 ynh_script_progression "Installing $app-livekit..."
 
-#pushd $install_dir
+pushd $install_dir
 	ynh_hide_warnings ynh_exec_as_app ./bootstrap.sh
 	ynh_hide_warnings ynh_exec_as_app mage
-#popd
+popd
 
 #=================================================
 # END OF SCRIPT
