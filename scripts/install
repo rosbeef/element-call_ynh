@@ -27,7 +27,7 @@ ynh_go_install
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
-#ynh_config_add --template="config.json" --destination="$install_dir/public/config.json"
+ynh_config_add --template="bootstrap.sh" --destination="$install_dir/"
 
 #=================================================
 # SYSTEM CONFIGURATION
